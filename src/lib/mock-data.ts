@@ -80,7 +80,7 @@ export const PRICE_ROWS: PriceRow[] = [
     emoji: "🧅",
     prices: { huancaro: 2.1, sanpedro: 2.5, vinocanchon: 2.2 },
     trendPct: -4.3,
-    history: [2.4, 2.35, 2.3, 2.28, 2.25, 2.2, 2.15, 2.1 },
+    history: [2.4, 2.35, 2.3, 2.28, 2.25, 2.2, 2.15, 2.1],
   },
   {
     id: "kiwicha",
