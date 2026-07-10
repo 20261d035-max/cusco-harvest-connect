@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VenderRouteImport } from './routes/vender'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PreciosRouteImport } from './routes/precios'
 import { Route as MercadoRouteImport } from './routes/mercado'
 import { Route as GuiaRouteImport } from './routes/guia'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const VenderRoute = VenderRouteImport.update({
   id: '/vender',
   path: '/vender',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PreciosRoute = PreciosRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/guia': typeof GuiaRoute
   '/mercado': typeof MercadoRoute
   '/precios': typeof PreciosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vender': typeof VenderRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/guia': typeof GuiaRoute
   '/mercado': typeof MercadoRoute
   '/precios': typeof PreciosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vender': typeof VenderRoute
 }
 export interface FileRoutesById {
@@ -70,13 +78,28 @@ export interface FileRoutesById {
   '/guia': typeof GuiaRoute
   '/mercado': typeof MercadoRoute
   '/precios': typeof PreciosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vender': typeof VenderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/empresas' | '/guia' | '/mercado' | '/precios' | '/vender'
+  fullPaths:
+    | '/'
+    | '/empresas'
+    | '/guia'
+    | '/mercado'
+    | '/precios'
+    | '/sitemap.xml'
+    | '/vender'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/empresas' | '/guia' | '/mercado' | '/precios' | '/vender'
+  to:
+    | '/'
+    | '/empresas'
+    | '/guia'
+    | '/mercado'
+    | '/precios'
+    | '/sitemap.xml'
+    | '/vender'
   id:
     | '__root__'
     | '/'
@@ -84,6 +107,7 @@ export interface FileRouteTypes {
     | '/guia'
     | '/mercado'
     | '/precios'
+    | '/sitemap.xml'
     | '/vender'
   fileRoutesById: FileRoutesById
 }
@@ -93,6 +117,7 @@ export interface RootRouteChildren {
   GuiaRoute: typeof GuiaRoute
   MercadoRoute: typeof MercadoRoute
   PreciosRoute: typeof PreciosRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VenderRoute: typeof VenderRoute
 }
 
@@ -103,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/vender'
       fullPath: '/vender'
       preLoaderRoute: typeof VenderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/precios': {
@@ -149,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuiaRoute: GuiaRoute,
   MercadoRoute: MercadoRoute,
   PreciosRoute: PreciosRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   VenderRoute: VenderRoute,
 }
 export const routeTree = rootRouteImport
