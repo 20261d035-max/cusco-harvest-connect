@@ -113,7 +113,7 @@ export function TraceabilityCard({ listing }: { listing: Listing }) {
                   <span className="absolute left-[18px] top-9 h-[calc(100%-2rem)] w-0.5 bg-border" />
                 )}
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-secondary">
-                  <step.icon className="h-4.5 w-4.5 h-5 w-5 text-primary" />
+                  <step.icon className="h-5 w-5 text-primary" />
                 </span>
                 <div className="min-w-0 pt-1">
                   <p className="text-sm font-bold">{step.title}</p>
