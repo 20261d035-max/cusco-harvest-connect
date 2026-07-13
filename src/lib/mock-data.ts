@@ -2,7 +2,7 @@ import papaImg from "@/assets/papa-nativa.jpg";
 import maizImg from "@/assets/maiz-blanco.jpg";
 import quinuaImg from "@/assets/quinua.jpg";
 import habasImg from "@/assets/habas.jpg";
-import ollucoImg from "@/assets/olluco.jpg";
+import ollucoImg from "@/assets/olluco.jpg.asset.json";
 import cebollaImg from "@/assets/cebolla.jpg";
 
 export const DISTRICTS = [
@@ -202,7 +202,7 @@ export const LISTINGS: Listing[] = [
     id: "l5",
     product: "Olluco",
     variety: "Olluco amarillo y rosado",
-    image: ollucoImg,
+    image: ollucoImg.url,
     farmer: "Mario Condori Huillca",
     community: "C.C. Raqchi",
     district: "Canchis (Sicuani)",
@@ -311,6 +311,6 @@ export const IMAGES: Record<string, string> = {
   maiz: maizImg,
   quinua: quinuaImg,
   habas: habasImg,
-  olluco: ollucoImg,
+  olluco: ollucoImg.url,
   cebolla: cebollaImg,
 };
