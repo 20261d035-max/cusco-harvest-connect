@@ -2,7 +2,7 @@ import papaImg from "@/assets/papa-nativa.jpg";
 import maizImg from "@/assets/maiz-blanco.jpg";
 import quinuaImg from "@/assets/quinua.jpg";
 import habasImg from "@/assets/habas.jpg";
-import ollucoImg from "@/assets/olluco.jpg";
+import ollucoImg from "@/assets/olluco.jpg.asset.json";
 import cebollaImg from "@/assets/cebolla.jpg";
 
 export const DISTRICTS = [
