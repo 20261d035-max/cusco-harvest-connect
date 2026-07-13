@@ -202,7 +202,7 @@ export const LISTINGS: Listing[] = [
     id: "l5",
     product: "Olluco",
     variety: "Olluco amarillo y rosado",
-    image: ollucoImg,
+    image: ollucoImg.url,
     farmer: "Mario Condori Huillca",
     community: "C.C. Raqchi",
     district: "Canchis (Sicuani)",
@@ -311,6 +311,6 @@ export const IMAGES: Record<string, string> = {
   maiz: maizImg,
   quinua: quinuaImg,
   habas: habasImg,
-  olluco: ollucoImg,
+  olluco: ollucoImg.url,
   cebolla: cebollaImg,
 };
